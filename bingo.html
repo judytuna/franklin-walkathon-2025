@@ -65,32 +65,32 @@ title: "Color Walk 2025 Bingo"
 let completedSquares = new Set();
 let currentLayout = [];
 
-// All bingo activities (24 regular + 1 free space)
+// All bingo activities with their original PDF colors (24 regular + 1 free space)
 const bingoActivities = [
-    { id: 'waddle', text: 'Waddle like a penguin for 20 steps', emoji: '🐧' },
-    { id: 'sponsor', text: 'Walk to a Color Walk sponsor and thank them', emoji: '🙏' },
-    { id: 'balance', text: 'Balance a stuffie 🧸 or book 📚 on your head while walking', emoji: '⚖️' },
-    { id: 'stairs', text: 'Walk up and down 2 flights of stairs (pretend it\'s a mountain!)', emoji: '🏔️' },
-    { id: 'nature', text: 'Go on a nature walk and find 3 cool things', emoji: '🌳' },
-    { id: 'spy', text: 'Take a walk around your house pretending you\'re a spy', emoji: '🕵️' },
-    { id: 'animals', text: 'Take a 7-min walk while naming animals', emoji: '🦜' },
-    { id: 'lunges', text: 'Do 20 walking lunges like a superhero', emoji: '🦸' },
-    { id: 'jokes', text: 'Walk 5 mins while reading a joke or comic book', emoji: '🤣' },
-    { id: 'animal-sounds', text: 'Take a 15-min walk making silly animal sounds', emoji: '🐖' },
-    { id: 'ball', text: 'Walk while tossing a ball back and forth', emoji: '⚾' },
-    { id: 'squats', text: 'Walk while doing mini squats every 10 steps', emoji: '🏃' },
-    { id: 'park', text: 'Walk to the closest park and back (treasure hunt)', emoji: '🪙' },
-    { id: 'skipping', text: 'Take a 10-min walk while skipping', emoji: '🏃' },
-    { id: 'music', text: 'Take a walk while listening to your favorite song', emoji: '🎵' },
-    { id: 'colors', text: 'Walk around your neighborhood and count colors', emoji: '🌈' },
-    { id: 'crab', text: 'Take a 5-min walk backwards or sideways like a crab', emoji: '🦀' },
-    { id: 'family', text: 'Take a walk with family, share a funny story', emoji: '👣' },
-    { id: '3000steps', text: 'Do 3,000 steps today—pretend you\'re on a new planet', emoji: '🪐' },
-    { id: 'stretch', text: 'Stretch while walking like you\'re reaching for stars', emoji: '🌟' },
-    { id: 'ispy', text: 'Go on a walk with a friend and play I Spy', emoji: '👀' },
-    { id: 'delivery', text: 'Walk while delivering a snack or drink to someone', emoji: '🍿' },
-    { id: '4000steps', text: 'Do 4,000 steps today—pretend you\'re in a parade', emoji: '🎉' },
-    { id: 'jumping', text: 'Walk 5 mins then do 7 silly jumping jacks', emoji: '🦘' }
+    { id: 'waddle', text: 'Waddle like a penguin for 20 steps', emoji: '🐧', color: 'red' },
+    { id: 'sponsor', text: 'Walk to a Color Walk sponsor and thank them', emoji: '🙏', color: 'orange' },
+    { id: 'balance', text: 'Balance a stuffie 🧸 or book 📚 on your head while walking', emoji: '⚖️', color: 'yellow' },
+    { id: 'stairs', text: 'Walk up and down 2 flights of stairs (pretend it\'s a mountain!)', emoji: '🏔️', color: 'green' },
+    { id: 'nature', text: 'Go on a nature walk and find 3 cool things', emoji: '🌳', color: 'blue' },
+    { id: 'spy', text: 'Take a walk around your house pretending you\'re a spy', emoji: '🕵️', color: 'blue' },
+    { id: 'animals', text: 'Take a 7-min walk while naming animals', emoji: '🦜', color: 'purple' },
+    { id: 'lunges', text: 'Do 20 walking lunges like a superhero', emoji: '🦸', color: 'red' },
+    { id: 'jokes', text: 'Walk 5 mins while reading a joke or comic book', emoji: '🤣', color: 'yellow' },
+    { id: 'animal-sounds', text: 'Take a 15-min walk making silly animal sounds', emoji: '🐖', color: 'yellow' },
+    { id: 'ball', text: 'Walk while tossing a ball back and forth', emoji: '⚾', color: 'green' },
+    { id: 'squats', text: 'Walk while doing mini squats every 10 steps', emoji: '🏃', color: 'purple' },
+    { id: 'park', text: 'Walk to the closest park and back (treasure hunt)', emoji: '🪙', color: 'orange' },
+    { id: 'skipping', text: 'Take a 10-min walk while skipping', emoji: '🏃', color: 'red' },
+    { id: 'music', text: 'Take a walk while listening to your favorite song', emoji: '🎵', color: 'orange' },
+    { id: 'colors', text: 'Walk around your neighborhood and count colors', emoji: '🌈', color: 'yellow' },
+    { id: 'crab', text: 'Take a 5-min walk backwards or sideways like a crab', emoji: '🦀', color: 'yellow' },
+    { id: 'family', text: 'Take a walk with family, share a funny story', emoji: '👣', color: 'orange' },
+    { id: '3000steps', text: 'Do 3,000 steps today—pretend you\'re on a new planet', emoji: '🪐', color: 'blue' },
+    { id: 'stretch', text: 'Stretch while walking like you\'re reaching for stars', emoji: '🌟', color: 'purple' },
+    { id: 'ispy', text: 'Go on a walk with a friend and play I Spy', emoji: '👀', color: 'red' },
+    { id: 'delivery', text: 'Walk while delivering a snack or drink to someone', emoji: '🍿', color: 'orange' },
+    { id: '4000steps', text: 'Do 4,000 steps today—pretend you\'re in a parade', emoji: '🎉', color: 'orange' },
+    { id: 'jumping', text: 'Walk 5 mins then do 7 silly jumping jacks', emoji: '🦘', color: 'green' }
 ];
 
 // Free space (always in center)
@@ -156,11 +156,10 @@ function generateBingoGrid() {
         
         if (activity.isFree) {
             square.classList.add('free-space');
+        } else {
+            // Add color based on activity's original PDF color
+            square.classList.add(`color-${activity.color}`);
         }
-        
-        // Add color based on position (like original PDF)
-        const colorClass = `color-${(index % 5) + 1}`;
-        square.classList.add(colorClass);
         
         square.innerHTML = `
             <div class="activity-text">${activity.text}</div>

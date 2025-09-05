@@ -977,12 +977,13 @@ section {
     min-height: 120px;
 }
 
-/* Different colors for each row like in the PDF */
-.bingo-square:nth-child(5n+1) { background: #FFB3BA; } /* Light red */
-.bingo-square:nth-child(5n+2) { background: #FFDFBA; } /* Light orange */
-.bingo-square:nth-child(5n+3) { background: #FFFFBA; } /* Light yellow */
-.bingo-square:nth-child(5n+4) { background: #BAFFC9; } /* Light green */
-.bingo-square:nth-child(5n) { background: #BAE1FF; }   /* Light blue */
+/* Activity-based colors matching the original PDF */
+.bingo-square.color-red { background: #FFB3BA; }      /* Light red */
+.bingo-square.color-orange { background: #FFDFBA; }   /* Light orange */
+.bingo-square.color-yellow { background: #FFFFBA; }   /* Light yellow */
+.bingo-square.color-green { background: #BAFFC9; }    /* Light green */
+.bingo-square.color-blue { background: #BAE1FF; }     /* Light blue */
+.bingo-square.color-purple { background: #E1BAFF; }   /* Light purple */
 
 .bingo-square.free-space {
     background: linear-gradient(135deg, #9C27B0, #E91E63) !important;
