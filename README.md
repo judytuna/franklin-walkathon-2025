@@ -17,7 +17,7 @@ A comprehensive Jekyll website for the Franklin Falcons' 10th Annual Color Walk 
 - Print-optimized for physical bingo cards
 
 ### 🏢 **Sponsor Showcase**
-- 19 local business sponsors with logos
+- 20 local business sponsors with logos
 - Organized by category (Healthcare, Education, Food & Dining, etc.)
 - Interactive cards with website links
 - Professional presentation with hover effects
@@ -81,7 +81,7 @@ franklin-walkathon-2025/
 - **Framework**: Jekyll (GitHub Pages compatible)
 - **Styling**: Custom CSS with CSS Variables
 - **JavaScript**: Vanilla JS for interactive features
-- **Images**: 19 sponsor logos + event branding
+- **Images**: 20 sponsor logos + event branding
 - **Responsive**: Mobile-first design approach
 
 ## 🎮 Interactive Features
@@ -100,13 +100,13 @@ franklin-walkathon-2025/
 
 ## 🏢 Sponsor Management
 
-**19 Local Business Sponsors** across categories:
+**20 Local Business Sponsors** across categories:
 - Healthcare & Wellness (2)
 - Education & Activities (3)
 - Music & Arts (3)
 - Entertainment (1)
 - Food & Dining (5)
-- Professional Services (3)
+- Professional Services (4)
 - Recreation & Fitness (2)
 - Individual Supporters (1)
 

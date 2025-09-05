@@ -58,13 +58,13 @@ franklin-walkathon-2025/
 - **Accessibility**: High contrast, clear typography
 
 ### 4. Sponsors Page (`sponsors.html`)
-- **19 sponsor logos** organized by category:
+- **20 sponsor logos** organized by category:
   - Healthcare & Wellness (2 sponsors)
   - Education & Activities (3 sponsors)
   - Music & Arts (3 sponsors)
   - Entertainment (1 sponsor)
   - Food & Dining (5 sponsors)
-  - Professional Services (3 sponsors)
+  - Professional Services (4 sponsors)
   - Recreation & Fitness (2 sponsors)
   - Individual Supporters (1 sponsor)
 - **Features**: Hover effects, website links, appreciation section
