@@ -66,7 +66,6 @@ franklin-walkathon-2025/
   - Food & Dining (5 sponsors)
   - Professional Services (4 sponsors)
   - Recreation & Fitness (2 sponsors)
-  - Individual Supporters (1 sponsor)
 - **Features**: Hover effects, website links, appreciation section
 - **Logo Management**: All logos in `assets/images/` with consistent sizing
 

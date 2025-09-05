@@ -108,7 +108,6 @@ franklin-walkathon-2025/
 - Food & Dining (5)
 - Professional Services (4)
 - Recreation & Fitness (2)
-- Individual Supporters (1)
 
 All logos are professionally displayed with consistent sizing and styling.
 
