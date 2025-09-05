@@ -1185,6 +1185,283 @@ section {
 }
 
 /* ========================================
+   SPONSORS PAGE STYLES
+   ======================================== */
+
+.sponsors-hero {
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 50%, var(--secondary-yellow) 100%);
+    padding: 4rem 0;
+    text-align: center;
+    color: var(--white);
+}
+
+.sponsors-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sponsors-logo {
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    border: 3px solid var(--white);
+}
+
+.sponsors-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+}
+
+.sponsors-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.sponsors-tagline {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--secondary-yellow);
+}
+
+/* Sponsors Grid Section */
+.sponsors-grid-section {
+    background: var(--white);
+    padding: 4rem 0;
+}
+
+.sponsors-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    padding: 0 2rem;
+}
+
+.sponsors-intro h2 {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 2rem;
+    font-weight: 800;
+}
+
+.sponsors-intro p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.sponsors-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.sponsor-category {
+    margin-bottom: 4rem;
+}
+
+.sponsor-category h3 {
+    font-size: 2rem;
+    color: var(--primary-green);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sponsor-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.sponsor-card {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    border: 3px solid var(--secondary-yellow);
+    transition: all 0.3s ease;
+}
+
+.sponsor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    border-color: var(--primary-green);
+}
+
+.sponsor-card h4 {
+    font-size: 1.3rem;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.sponsor-card p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.sponsor-link {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--light-green) 100%);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sponsor-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, var(--dark-green) 0%, var(--primary-green) 100%);
+}
+
+/* Sponsor Appreciation Section */
+.sponsor-appreciation {
+    background: linear-gradient(135deg, var(--light-green) 0%, var(--primary-green) 100%);
+    padding: 4rem 0;
+    color: var(--white);
+}
+
+.appreciation-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.appreciation-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    font-weight: 800;
+    color: var(--secondary-yellow);
+}
+
+.appreciation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.appreciation-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.appreciation-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: var(--secondary-yellow);
+}
+
+.appreciation-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Become Sponsor Section */
+.become-sponsor {
+    background: var(--secondary-yellow);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.become-sponsor-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.become-sponsor h2 {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 2rem;
+    font-weight: 800;
+}
+
+.become-sponsor p {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.contact-info {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 2rem;
+    border: 2px solid var(--primary-green);
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design for Sponsors */
+@media (max-width: 768px) {
+    .sponsors-title {
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
+    
+    .sponsors-logo {
+        max-width: 100px;
+    }
+    
+    .sponsors-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .sponsors-tagline {
+        font-size: 1rem;
+    }
+    
+    .sponsor-category h3 {
+        font-size: 1.5rem;
+    }
+    
+    .sponsor-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .appreciation-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .sponsors-intro,
+    .appreciation-content,
+    .become-sponsor-content {
+        padding: 0 1rem;
+    }
+}
+
+/* ========================================
    PRINT STYLESHEET
    ======================================== */
 
