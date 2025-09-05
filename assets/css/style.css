@@ -1153,3 +1153,244 @@ section {
         text-align: center;
     }
 }
+
+/* ========================================
+   PRINT STYLESHEET
+   ======================================== */
+
+@media print {
+    /* Reset basic print styles */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    /* Page setup */
+    @page {
+        size: letter;
+        margin: 0.5in;
+    }
+    
+    /* Hide non-essential elements */
+    .site-header,
+    .site-footer,
+    .sponsors-section,
+    .bingo-controls,
+    .progress-info {
+        display: none !important;
+    }
+    
+    /* Print layout */
+    body {
+        background: white !important;
+        font-size: 12pt;
+        line-height: 1.2;
+    }
+    
+    .bingo-hero {
+        background: white !important;
+        padding: 0.5in 0 0.3in 0;
+        page-break-inside: avoid;
+    }
+    
+    .bingo-header {
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .bingo-logo {
+        width: 60px;
+        height: 60px;
+        border: 2px solid #333;
+    }
+    
+    .bingo-title {
+        font-size: 24pt !important;
+        color: #333 !important;
+        text-shadow: none !important;
+        background: none !important;
+        -webkit-background-clip: unset !important;
+        background-clip: unset !important;
+        -webkit-text-fill-color: #333 !important;
+        animation: none !important;
+    }
+    
+    .bingo-info {
+        background: #f5f5f5 !important;
+        border: 2px solid #333;
+        padding: 0.3in;
+        margin-bottom: 0.2in;
+    }
+    
+    .bingo-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .bingo-form input {
+        border: 1px solid #333;
+        padding: 0.1in;
+        background: white;
+    }
+    
+    .bingo-rules {
+        font-size: 10pt;
+    }
+    
+    .bingo-rules h3 {
+        font-size: 12pt;
+        margin-bottom: 0.5rem;
+    }
+    
+    .bingo-rules ul {
+        margin: 0.5rem 0;
+        padding-left: 1rem;
+    }
+    
+    .bingo-rules li {
+        margin-bottom: 0.2rem;
+    }
+    
+    .prize-selection {
+        gap: 1rem;
+        margin: 0.3rem 0;
+    }
+    
+    .registration-reminder {
+        background: #e8e8e8 !important;
+        border: 2px solid #333;
+        font-size: 10pt;
+        padding: 0.2in;
+    }
+    
+    /* Bingo grid for print */
+    .bingo-game {
+        background: white !important;
+        padding: 0;
+    }
+    
+    .bingo-grid {
+        max-width: 7in;
+        margin: 0 auto;
+        gap: 2px;
+        padding: 0;
+    }
+    
+    .bingo-square {
+        aspect-ratio: 1;
+        border: 2px solid #333 !important;
+        border-radius: 8px;
+        padding: 0.08in;
+        min-height: auto;
+        height: 1.3in;
+        font-size: 8pt;
+        page-break-inside: avoid;
+    }
+    
+    /* Print colors - ensure they show up */
+    .bingo-square.color-red { 
+        background: #FFB3BA !important; 
+        border-color: #FF6B6B !important;
+    }
+    .bingo-square.color-orange { 
+        background: #FFDFBA !important; 
+        border-color: #FF9F43 !important;
+    }
+    .bingo-square.color-yellow { 
+        background: #FFFFBA !important; 
+        border-color: #F1C40F !important;
+    }
+    .bingo-square.color-green { 
+        background: #BAFFC9 !important; 
+        border-color: #2ECC71 !important;
+    }
+    .bingo-square.color-blue { 
+        background: #BAE1FF !important; 
+        border-color: #3498DB !important;
+    }
+    .bingo-square.color-purple { 
+        background: #E1BAFF !important; 
+        border-color: #9B59B6 !important;
+    }
+    
+    .bingo-square.free-space {
+        background: #D8BFD8 !important;
+        border-color: #8B008B !important;
+        color: #333 !important;
+        font-weight: bold;
+    }
+    
+    .bingo-square.completed {
+        background-color: #90EE90 !important;
+        border-color: #228B22 !important;
+        color: #000 !important;
+    }
+    
+    .bingo-square:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+    
+    .activity-text {
+        font-size: 7pt;
+        line-height: 1.1;
+        margin-bottom: 0.05in;
+        color: #333 !important;
+        font-weight: 600;
+    }
+    
+    .bingo-square.free-space .activity-text {
+        color: #333 !important;
+        font-size: 8pt;
+    }
+    
+    .bingo-square.completed .activity-text {
+        color: #000 !important;
+    }
+    
+    .emoji {
+        font-size: 12pt;
+        margin-bottom: 0.02in;
+    }
+    
+    .checkmark {
+        display: block !important;
+        opacity: 1 !important;
+        transform: scale(1) !important;
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        width: 18px;
+        height: 18px;
+        font-size: 10pt;
+        background: #228B22 !important;
+        color: white !important;
+        border: 1px solid #333;
+    }
+    
+    .bingo-square:not(.completed) .checkmark {
+        display: none !important;
+    }
+    
+    .bingo-status {
+        display: none !important;
+    }
+    
+    /* Avoid page breaks */
+    .bingo-hero,
+    .bingo-grid {
+        page-break-inside: avoid;
+    }
+    
+    /* Print-friendly text */
+    .bingo-info,
+    .bingo-form label,
+    .bingo-rules,
+    .prize-selection label,
+    .registration-reminder {
+        color: #333 !important;
+    }
+}
