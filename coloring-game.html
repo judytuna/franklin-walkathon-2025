@@ -30,6 +30,7 @@ title: "Color the Color Walk Logo"
         </div>
         <div class="game-controls">
             <button id="reset-btn" class="control-btn">🔄 Start Over</button>
+            <button id="explode-btn" class="control-btn">💥 Explode!</button>
             <div class="current-color">
                 <span>Current Color:</span>
                 <div id="current-color-display" style="background-color: #ff0000;"></div>
@@ -247,7 +248,7 @@ document.querySelectorAll('.colorable').forEach(element => {
     });
 });
 
-// Add sparkle animation CSS
+// Add sparkle and explosion animation CSS
 const style = document.createElement('style');
 style.textContent = `
     @keyframes sparkle {
@@ -255,6 +256,71 @@ style.textContent = `
         50% { transform: scale(2) rotate(180deg); opacity: 0.8; }
         100% { transform: scale(0) rotate(360deg); opacity: 0; }
     }
+    
+    @keyframes explode {
+        0% { 
+            transform: translate(0, 0) scale(1) rotate(0deg); 
+            opacity: 1; 
+        }
+        50% { 
+            opacity: 0.7; 
+        }
+        100% { 
+            opacity: 1; 
+        }
+    }
+    
+    .exploded {
+        animation: explode 2s ease-out forwards;
+    }
 `;
 document.head.appendChild(style);
+
+// Explosion functionality
+let isExploded = false;
+const explodeBtn = document.getElementById('explode-btn');
+
+explodeBtn.addEventListener('click', function() {
+    const colorableElements = document.querySelectorAll('.colorable');
+    
+    if (!isExploded) {
+        // EXPLODE: scatter elements randomly
+        colorableElements.forEach((element, index) => {
+            // Generate random positions and rotations
+            const randomX = (Math.random() - 0.5) * 600; // -300 to 300
+            const randomY = (Math.random() - 0.5) * 600; // -300 to 300
+            const randomRotation = Math.random() * 720 - 360; // -360 to 360
+            const randomScale = 0.5 + Math.random() * 1.5; // 0.5 to 2
+            
+            // Apply random transform with staggered delay
+            setTimeout(() => {
+                element.style.transform = `translate(${randomX}px, ${randomY}px) scale(${randomScale}) rotate(${randomRotation}deg)`;
+                element.style.transition = 'transform 1s ease-out';
+                element.classList.add('exploded');
+            }, index * 50); // Stagger by 50ms per element
+        });
+        
+        // Update button
+        explodeBtn.textContent = '🔄 Reset Explosion';
+        explodeBtn.style.background = '#E91E63';
+        isExploded = true;
+        
+    } else {
+        // RESET: bring everything back to normal
+        colorableElements.forEach((element, index) => {
+            setTimeout(() => {
+                element.style.transform = 'translate(0, 0) scale(1) rotate(0deg)';
+                element.style.transition = 'transform 0.8s ease-in-out';
+                element.classList.remove('exploded');
+            }, index * 30); // Faster reset stagger
+        });
+        
+        // Update button back
+        setTimeout(() => {
+            explodeBtn.textContent = '💥 Explode!';
+            explodeBtn.style.background = '';
+            isExploded = false;
+        }, 1000);
+    }
+});
 </script>
