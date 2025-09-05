@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Color the Franklin Falcon"
+title: "Color the Color Walk Logo"
 ---
 
 <section class="coloring-game-hero">
     <div class="coloring-hero-content">
-        <h1 class="coloring-title">🎨 Color the Franklin Falcon! 🎨</h1>
-        <p class="coloring-subtitle">Click on different parts of the Falcon and rainbow to color them in!</p>
-        <p class="coloring-instructions">Choose your colors and make the most awesome Franklin Falcon ever! 🦅</p>
+        <h1 class="coloring-title">🎨 Color the Color Walk Logo! 🎨</h1>
+        <p class="coloring-subtitle">Click on different parts of the rainbow and letters to color them in!</p>
+        <p class="coloring-instructions">Choose your colors and create your own amazing Color Walk design! 🌈</p>
     </div>
 </section>
 
@@ -38,108 +38,51 @@ title: "Color the Franklin Falcon"
     </div>
 
     <div class="coloring-canvas">
-        <svg id="falcon-coloring" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-            <!-- Based on the Official Franklin Elementary Color Walk Logo -->
-            
-            <!-- Colorful Rainbow Arc (left side) -->
-            <g id="rainbow" class="colorable-group">
-                <path id="rainbow-band-1" class="colorable" d="M50 300 A150 150 0 0 1 200 150 A130 130 0 0 0 70 280 Z" fill="none" stroke="#333" stroke-width="4"/>
-                <path id="rainbow-band-2" class="colorable" d="M70 280 A130 130 0 0 1 200 150 A110 110 0 0 0 90 260 Z" fill="none" stroke="#333" stroke-width="4"/>
-                <path id="rainbow-band-3" class="colorable" d="M90 260 A110 110 0 0 1 200 150 A90 90 0 0 0 110 240 Z" fill="none" stroke="#333" stroke-width="4"/>
-                <path id="rainbow-band-4" class="colorable" d="M110 240 A90 90 0 0 1 200 150 A70 70 0 0 0 130 220 Z" fill="none" stroke="#333" stroke-width="4"/>
-                <path id="rainbow-band-5" class="colorable" d="M130 220 A70 70 0 0 1 200 150 A50 50 0 0 0 150 200 Z" fill="none" stroke="#333" stroke-width="4"/>
+        <svg id="falcon-coloring" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <!-- Rainbow arcs -->
+            <g id="rainbow">
+                <path d="M 85 200 A 115 115 0 1 1 315 200 L 300 200 A 100 100 0 1 0 100 200 Z" fill="#ff0000" stroke="#000" stroke-width="2" class="colorable"/>
+                <path d="M 100 200 A 100 100 0 1 1 300 200 L 285 200 A 85 85 0 1 0 115 200 Z" fill="#ff8800" stroke="#000" stroke-width="2" class="colorable"/>
+                <path d="M 115 200 A 85 85 0 1 1 285 200 L 270 200 A 70 70 0 1 0 130 200 Z" fill="#ffdd00" stroke="#000" stroke-width="2" class="colorable"/>
+                <path d="M 130 200 A 70 70 0 1 1 270 200 L 255 200 A 55 55 0 1 0 145 200 Z" fill="#00ff00" stroke="#000" stroke-width="2" class="colorable"/>
+                <path d="M 145 200 A 55 55 0 1 1 255 200 L 240 200 A 40 40 0 1 0 160 200 Z" fill="#0088ff" stroke="#000" stroke-width="2" class="colorable"/>
             </g>
 
-            <!-- Franklin Falcon (center, based on original logo) -->
-            <g id="falcon" class="colorable-group">
-                <!-- Falcon Head -->
-                <circle id="falcon-head" class="colorable" cx="400" cy="180" r="40" fill="none" stroke="#333" stroke-width="4"/>
-                
-                <!-- Falcon Beak -->
-                <path id="falcon-beak" class="colorable" d="M440 180 Q460 175 465 180 Q460 185 440 180 Z" fill="none" stroke="#333" stroke-width="3"/>
-                
-                <!-- Falcon Eye -->
-                <circle id="falcon-eye" class="colorable" cx="415" cy="170" r="6" fill="none" stroke="#333" stroke-width="2"/>
-                <circle id="falcon-eye-pupil" class="colorable" cx="417" cy="168" r="2" fill="#333" stroke="#333" stroke-width="1"/>
-                
-                <!-- Falcon Body (main yellow area from logo) -->
-                <ellipse id="falcon-body" class="colorable" cx="400" cy="280" rx="60" ry="90" fill="none" stroke="#333" stroke-width="4"/>
-                
-                <!-- Falcon Wing (green area from logo) -->
-                <path id="falcon-wing" class="colorable" d="M360 240 Q320 220 290 260 Q280 300 300 350 Q320 380 360 370 Q400 360 410 320 Q415 280 400 250 Q380 240 360 240 Z" fill="none" stroke="#333" stroke-width="4"/>
-                
-                <!-- Wing Feathers -->
-                <path id="wing-feather-1" class="colorable" d="M330 250 Q310 260 320 280 Q335 275 330 250" fill="none" stroke="#333" stroke-width="2"/>
-                <path id="wing-feather-2" class="colorable" d="M340 270 Q320 280 330 300 Q345 295 340 270" fill="none" stroke="#333" stroke-width="2"/>
-                <path id="wing-feather-3" class="colorable" d="M350 290 Q330 300 340 320 Q355 315 350 290" fill="none" stroke="#333" stroke-width="2"/>
-                
-                <!-- Falcon Tail Feathers -->
-                <path id="falcon-tail-1" class="colorable" d="M360 360 Q280 350 240 390 Q250 400 290 395 Q340 385 360 360 Z" fill="none" stroke="#333" stroke-width="3"/>
-                <path id="falcon-tail-2" class="colorable" d="M370 370 Q300 360 260 400 Q270 410 310 405 Q350 395 370 370 Z" fill="none" stroke="#333" stroke-width="3"/>
-                
-                <!-- Falcon Legs -->
-                <line id="falcon-leg-left" class="colorable" x1="385" y1="360" x2="375" y2="400" stroke="#333" stroke-width="4"/>
-                <line id="falcon-leg-right" class="colorable" x1="415" y1="360" x2="425" y2="400" stroke="#333" stroke-width="4"/>
-                
-                <!-- Falcon Sneakers (like in the original logo) -->
-                <ellipse id="falcon-shoe-left" class="colorable" cx="370" cy="405" rx="18" ry="10" fill="none" stroke="#333" stroke-width="3"/>
-                <ellipse id="falcon-shoe-right" class="colorable" cx="430" cy="405" rx="18" ry="10" fill="none" stroke="#333" stroke-width="3"/>
-                
-                <!-- Shoe Laces -->
-                <line id="shoe-lace-left-1" class="colorable" x1="360" y1="402" x2="380" y2="402" stroke="#333" stroke-width="2"/>
-                <line id="shoe-lace-left-2" class="colorable" x1="362" y1="408" x2="378" y2="408" stroke="#333" stroke-width="2"/>
-                <line id="shoe-lace-right-1" class="colorable" x1="420" y1="402" x2="440" y2="402" stroke="#333" stroke-width="2"/>
-                <line id="shoe-lace-right-2" class="colorable" x1="422" y1="408" x2="438" y2="408" stroke="#333" stroke-width="2"/>
+            <!-- Cloud -->
+            <g id="cloud">
+                <path d="M 130 210 Q 140 185 155 195 Q 165 185 175 195 Q 185 185 195 210 Q 190 225 175 220 Q 165 225 155 220 Q 145 225 130 210 Z" fill="#ffffff" stroke="#000" stroke-width="2" class="colorable"/>
             </g>
 
-            <!-- Walking Track/Ground -->
-            <g id="track" class="colorable-group">
-                <ellipse id="track-oval" class="colorable" cx="400" cy="480" rx="300" ry="60" fill="none" stroke="#333" stroke-width="4"/>
-                <line id="track-line-1" class="colorable" x1="150" y1="480" x2="650" y2="480" stroke="#333" stroke-width="2" stroke-dasharray="20,10"/>
-                <line id="track-line-2" class="colorable" x1="150" y1="460" x2="650" y2="460" stroke="#333" stroke-width="2" stroke-dasharray="20,10"/>
-                <line id="track-line-3" class="colorable" x1="150" y1="500" x2="650" y2="500" stroke="#333" stroke-width="2" stroke-dasharray="20,10"/>
+            <!-- Curved text paths -->
+            <defs>
+                <path id="top-text-path" d="M 70 200 A 130 130 0 0 1 330 200"/>
+            </defs>
+
+            <!-- Top text: FRANKLIN FALCONS - outlined -->
+            <g id="top-text">
+                <text font-family="Arial Black, Arial" font-size="26" font-weight="900" fill="none" stroke="#000000" stroke-width="2" class="colorable">
+                    <textPath href="#top-text-path" startOffset="50%" text-anchor="middle">★ FRANKLIN FALCONS ★</textPath>
+                </text>
             </g>
 
-            <!-- Color Walk Text Area -->
-            <g id="text-area" class="colorable-group">
-                <!-- Text background banner -->
-                <rect id="text-banner" class="colorable" x="500" y="120" width="250" height="80" rx="15" fill="none" stroke="#333" stroke-width="3"/>
-                
-                <!-- Decorative text elements (simplified letter shapes for coloring) -->
-                <rect id="letter-c" class="colorable" x="520" y="140" width="15" height="40" fill="none" stroke="#333" stroke-width="2"/>
-                <rect id="letter-o" class="colorable" x="545" y="140" width="15" height="40" fill="none" stroke="#333" stroke-width="2"/>
-                <rect id="letter-l" class="colorable" x="570" y="140" width="15" height="40" fill="none" stroke="#333" stroke-width="2"/>
-                <rect id="letter-o2" class="colorable" x="595" y="140" width="15" height="40" fill="none" stroke="#333" stroke-width="2"/>
-                <rect id="letter-r" class="colorable" x="620" y="140" width="15" height="40" fill="none" stroke="#333" stroke-width="2"/>
-                
-                <!-- "WALK" letters below -->
-                <rect id="letter-w" class="colorable" x="520" y="160" width="15" height="20" fill="none" stroke="#333" stroke-width="2"/>
-                <rect id="letter-a" class="colorable" x="545" y="160" width="15" height="20" fill="none" stroke="#333" stroke-width="2"/>
-                <rect id="letter-l2" class="colorable" x="570" y="160" width="15" height="20" fill="none" stroke="#333" stroke-width="2"/>
-                <rect id="letter-k" class="colorable" x="595" y="160" width="15" height="20" fill="none" stroke="#333" stroke-width="2"/>
+            <!-- Years - plain black, positioned at rainbow sides -->
+            <g id="years">
+                <text x="60" y="200" font-family="Arial" font-size="12" font-weight="bold" font-stretch="condensed" fill="#000000" text-anchor="middle">2015</text>
+                <text x="340" y="200" font-family="Arial" font-size="12" font-weight="bold" font-stretch="condensed" fill="#000000" text-anchor="middle">2025</text>
             </g>
 
-            <!-- Fun Decorative Elements -->
-            <g id="decorations" class="colorable-group">
-                <!-- Stars around the falcon -->
-                <polygon id="star-1" class="colorable" points="150,100 155,115 170,115 158,125 163,140 150,130 137,140 142,125 130,115 145,115" fill="none" stroke="#333" stroke-width="2"/>
-                <polygon id="star-2" class="colorable" points="650,120 655,135 670,135 658,145 663,160 650,150 637,160 642,145 630,135 645,135" fill="none" stroke="#333" stroke-width="2"/>
-                <polygon id="star-3" class="colorable" points="100,400 105,415 120,415 108,425 113,440 100,430 87,440 92,425 80,415 95,415" fill="none" stroke="#333" stroke-width="2"/>
-                
-                <!-- Clouds -->
-                <ellipse id="cloud-1a" class="colorable" cx="180" cy="80" rx="20" ry="15" fill="none" stroke="#333" stroke-width="2"/>
-                <ellipse id="cloud-1b" class="colorable" cx="200" cy="75" rx="25" ry="18" fill="none" stroke="#333" stroke-width="2"/>
-                <ellipse id="cloud-1c" class="colorable" cx="220" cy="80" rx="20" ry="15" fill="none" stroke="#333" stroke-width="2"/>
-                
-                <ellipse id="cloud-2a" class="colorable" cx="600" cy="60" rx="20" ry="15" fill="none" stroke="#333" stroke-width="2"/>
-                <ellipse id="cloud-2b" class="colorable" cx="620" cy="55" rx="25" ry="18" fill="none" stroke="#333" stroke-width="2"/>
-                <ellipse id="cloud-2c" class="colorable" cx="640" cy="60" rx="20" ry="15" fill="none" stroke="#333" stroke-width="2"/>
-                
-                <!-- Fun splash/color burst elements -->
-                <circle id="splash-1" class="colorable" cx="250" cy="300" r="15" fill="none" stroke="#333" stroke-width="3"/>
-                <circle id="splash-2" class="colorable" cx="550" cy="250" r="12" fill="none" stroke="#333" stroke-width="3"/>
-                <circle id="splash-3" class="colorable" cx="120" cy="200" r="10" fill="none" stroke="#333" stroke-width="3"/>
-                <circle id="splash-4" class="colorable" cx="680" cy="350" r="14" fill="none" stroke="#333" stroke-width="3"/>
+            <!-- Bottom text - each letter individually colorable on straight line -->
+            <g id="bottom-text">
+                <text x="81" y="250" font-family="Arial" font-size="36" font-weight="900" font-stretch="condensed" fill="none" stroke="#000000" stroke-width="2" text-anchor="middle" class="colorable">C</text>
+                <text x="107" y="250" font-family="Arial" font-size="36" font-weight="900" font-stretch="condensed" fill="none" stroke="#000000" stroke-width="2" text-anchor="middle" class="colorable">O</text>
+                <text x="132" y="250" font-family="Arial" font-size="36" font-weight="900" font-stretch="condensed" fill="none" stroke="#000000" stroke-width="2" text-anchor="middle" class="colorable">L</text>
+                <text x="157" y="250" font-family="Arial" font-size="36" font-weight="900" font-stretch="condensed" fill="none" stroke="#000000" stroke-width="2" text-anchor="middle" class="colorable">O</text>
+                <text x="182" y="250" font-family="Arial" font-size="36" font-weight="900" font-stretch="condensed" fill="none" stroke="#000000" stroke-width="2" text-anchor="middle" class="colorable">R</text>
+                <text x="233" y="250" font-family="Arial" font-size="36" font-weight="900" font-stretch="condensed" fill="none" stroke="#000000" stroke-width="2" text-anchor="middle" class="colorable">W</text>
+                <text x="262" y="250" font-family="Arial" font-size="36" font-weight="900" font-stretch="condensed" fill="none" stroke="#000000" stroke-width="2" text-anchor="middle" class="colorable">A</text>
+                <text x="288" y="250" font-family="Arial" font-size="36" font-weight="900" font-stretch="condensed" fill="none" stroke="#000000" stroke-width="2" text-anchor="middle" class="colorable">L</text>
+                <text x="313" y="250" font-family="Arial" font-size="36" font-weight="900" font-stretch="condensed" fill="none" stroke="#000000" stroke-width="2" text-anchor="middle" class="colorable">K</text>
+                <text x="200" y="280" font-family="Arial" font-size="14" font-weight="bold" font-stretch="condensed" fill="#000000" text-anchor="middle">10TH ANNUAL WALKATHON</text>
             </g>
         </svg>
     </div>
@@ -147,27 +90,27 @@ title: "Color the Franklin Falcon"
 
 <section class="coloring-game-info">
     <div class="game-info-content">
-        <h2>🦅 About Our Franklin Falcon! 🦅</h2>
-        <p>The Franklin Falcon represents our school spirit and pride! Just like our students, falcons are:</p>
+        <h2>🌈 About Our Color Walk Logo! 🌈</h2>
+        <p>This is the official Franklin Elementary Color Walk logo celebrating 10 amazing years! The rainbow represents:</p>
         <div class="falcon-traits">
             <div class="trait">
-                <span class="trait-icon">💪</span>
-                <span class="trait-text">Strong and Determined</span>
+                <span class="trait-icon">🌈</span>
+                <span class="trait-text">Unity and Diversity</span>
             </div>
             <div class="trait">
-                <span class="trait-icon">🎯</span>
-                <span class="trait-text">Focused on Goals</span>
+                <span class="trait-icon">⭐</span>
+                <span class="trait-text">Franklin Falcons Pride</span>
             </div>
             <div class="trait">
-                <span class="trait-icon">🤝</span>
-                <span class="trait-text">Work Great in Teams</span>
+                <span class="trait-icon">🎉</span>
+                <span class="trait-text">10 Years of Fun</span>
             </div>
             <div class="trait">
-                <span class="trait-icon">🌟</span>
-                <span class="trait-text">Soar to New Heights</span>
+                <span class="trait-icon">💚</span>
+                <span class="trait-text">School Spirit</span>
             </div>
         </div>
-        <p class="game-share-text">Color your falcon and get ready for our amazing Color Walk! 🌈</p>
+        <p class="game-share-text">Color your logo design and get ready for our amazing Color Walk 2025! 🌈</p>
     </div>
 </section>
 
