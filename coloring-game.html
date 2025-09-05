@@ -15,14 +15,14 @@ title: "Color the Color Walk Logo"
     <div class="color-palette">
         <h3>🌈 Pick Your Colors! 🌈</h3>
         <div class="color-buttons">
-            <button class="color-btn" data-color="#FF6B35" style="background-color: #FF6B35;" title="Orange"></button>
-            <button class="color-btn" data-color="#FFE13B" style="background-color: #FFE13B;" title="Yellow"></button>
-            <button class="color-btn" data-color="#066C2D" style="background-color: #066C2D;" title="Green"></button>
-            <button class="color-btn" data-color="#4CAF50" style="background-color: #4CAF50;" title="Light Green"></button>
-            <button class="color-btn" data-color="#2196F3" style="background-color: #2196F3;" title="Blue"></button>
+            <button class="color-btn" data-color="#ff0000" style="background-color: #ff0000;" title="Red"></button>
+            <button class="color-btn" data-color="#ff8800" style="background-color: #ff8800;" title="Orange"></button>
+            <button class="color-btn" data-color="#ffdd00" style="background-color: #ffdd00;" title="Yellow"></button>
+            <button class="color-btn" data-color="#00ff00" style="background-color: #00ff00;" title="Green"></button>
+            <button class="color-btn" data-color="#0088ff" style="background-color: #0088ff;" title="Blue"></button>
             <button class="color-btn" data-color="#9C27B0" style="background-color: #9C27B0;" title="Purple"></button>
             <button class="color-btn" data-color="#E91E63" style="background-color: #E91E63;" title="Pink"></button>
-            <button class="color-btn" data-color="#F44336" style="background-color: #F44336;" title="Red"></button>
+            <button class="color-btn" data-color="#4CAF50" style="background-color: #4CAF50;" title="Light Green"></button>
             <button class="color-btn" data-color="#795548" style="background-color: #795548;" title="Brown"></button>
             <button class="color-btn" data-color="#607D8B" style="background-color: #607D8B;" title="Gray"></button>
             <button class="color-btn" data-color="#000000" style="background-color: #000000;" title="Black"></button>
@@ -32,7 +32,7 @@ title: "Color the Color Walk Logo"
             <button id="reset-btn" class="control-btn">🔄 Start Over</button>
             <div class="current-color">
                 <span>Current Color:</span>
-                <div id="current-color-display" style="background-color: #FF6B35;"></div>
+                <div id="current-color-display" style="background-color: #ff0000;"></div>
             </div>
         </div>
     </div>
@@ -166,7 +166,7 @@ title: "Color the Color Walk Logo"
 </section>
 
 <script>
-let currentColor = '#FF6B35'; // Default orange color
+let currentColor = '#ff0000'; // Default red color
 
 // Color palette functionality
 document.querySelectorAll('.color-btn').forEach(btn => {
