@@ -1,0 +1,419 @@
+/* Franklin Elementary Color Walk 2025 Styles */
+:root {
+    --primary-green: #066C2D;
+    --secondary-yellow: #FFE13B;
+    --light-green: #4CAF50;
+    --dark-green: #004D1F;
+    --accent-orange: #FF6B35;
+    --text-dark: #333;
+    --text-light: #666;
+    --white: #FFFFFF;
+    --light-gray: #F8F9FA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.site-header {
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+    color: var(--white);
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.site-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.site-title h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.mascot {
+    background: var(--secondary-yellow);
+    color: var(--primary-green);
+    padding: 0.3rem 1rem;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--secondary-yellow) 0%, #FFD700 100%);
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--primary-green);
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.hero-subtitle {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--dark-green);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-tagline {
+    font-size: 1.5rem;
+    color: var(--primary-green);
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.hero-date {
+    background: var(--white);
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    border: 3px solid var(--primary-green);
+}
+
+.date-label {
+    font-weight: 700;
+    color: var(--primary-green);
+    font-size: 1.1rem;
+}
+
+.date {
+    font-weight: 900;
+    color: var(--dark-green);
+    font-size: 1.3rem;
+    margin-left: 0.5rem;
+}
+
+/* Section Styles */
+section {
+    padding: 4rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+/* About Color Walk Section */
+.about-color-walk {
+    background: var(--white);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border: 3px solid var(--secondary-yellow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.feature-card p {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Fundraising Goal Section */
+.fundraising-goal {
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+    color: var(--white);
+}
+
+.goal-container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.goal-container h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-yellow);
+    font-weight: 900;
+}
+
+.goal-description {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.goal-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    text-align: left;
+}
+
+.goal-list li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+/* Incentives Section */
+.incentives {
+    background: var(--light-gray);
+}
+
+.incentive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.incentive-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border: 3px solid var(--primary-green);
+}
+
+.incentive-card.highlight {
+    background: linear-gradient(135deg, var(--secondary-yellow) 0%, #FFD700 100%);
+    border-color: var(--primary-green);
+    transform: scale(1.05);
+}
+
+.incentive-card h3 {
+    font-size: 1.8rem;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.incentive-card.highlight h3 {
+    color: var(--dark-green);
+}
+
+.incentive-card p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* How to Participate Section */
+.how-to-participate {
+    background: var(--white);
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.step {
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--light-green) 100%);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 900;
+    margin: 0 auto 1rem;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.step h3 {
+    font-size: 1.5rem;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.step p {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* CTA Section */
+.cta {
+    background: linear-gradient(135deg, var(--secondary-yellow) 0%, #FFD700 100%);
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.cta-content h2 {
+    font-size: 3rem;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    font-weight: 900;
+}
+
+.cta-content p {
+    font-size: 1.5rem;
+    color: var(--dark-green);
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--light-green) 100%);
+    color: var(--white);
+    padding: 1.5rem 3rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, var(--dark-green) 0%, var(--primary-green) 100%);
+}
+
+/* Footer */
+.site-footer {
+    background: var(--dark-green);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.site-footer p {
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 2rem;
+    }
+    
+    .hero-tagline {
+        font-size: 1.2rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .goal-container h2 {
+        font-size: 2.5rem;
+    }
+    
+    .cta-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .content-grid,
+    .incentive-grid,
+    .steps-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .wrapper {
+        padding: 0 15px;
+    }
+}

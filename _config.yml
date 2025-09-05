@@ -1,0 +1,28 @@
+# Site settings
+title: "Franklin Elementary Color Walk 2025"
+description: "Join the Franklin Falcons for the 10th Annual Color Walk! Let's walk together to raise money for our school!"
+baseurl: ""
+url: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Exclude files
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+# Site information
+school_name: "Franklin Elementary"
+mascot: "Franklin Falcons"
+event_name: "Color Walk"
+event_date: "October 3, 2025"
+fundraising_goal: "$45,000"
+event_year: "2025"
+
+# Colors
+primary_color: "#066C2D"    # Dark Green
+secondary_color: "#FFE13B"  # Bright Yellow
