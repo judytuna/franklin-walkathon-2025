@@ -39,54 +39,61 @@ title: "Color the Franklin Falcon"
 
     <div class="coloring-canvas">
         <svg id="falcon-coloring" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-            <!-- Rainbow Background -->
+            <!-- Rainbow Background (left side, based on Color Walk logo) -->
             <g id="rainbow" class="colorable-group">
-                <path id="rainbow-band-1" class="colorable" d="M50 400 Q400 200 750 400 Q400 220 50 400 Z" fill="none" stroke="#333" stroke-width="3"/>
-                <path id="rainbow-band-2" class="colorable" d="M70 410 Q400 230 730 410 Q400 250 70 410 Z" fill="none" stroke="#333" stroke-width="3"/>
-                <path id="rainbow-band-3" class="colorable" d="M90 420 Q400 260 710 420 Q400 280 90 420 Z" fill="none" stroke="#333" stroke-width="3"/>
-                <path id="rainbow-band-4" class="colorable" d="M110 430 Q400 290 690 430 Q400 310 110 430 Z" fill="none" stroke="#333" stroke-width="3"/>
-                <path id="rainbow-band-5" class="colorable" d="M130 440 Q400 320 670 440 Q400 340 130 440 Z" fill="none" stroke="#333" stroke-width="3"/>
+                <!-- Rainbow bands with proper arc positioning -->
+                <path id="rainbow-band-red" class="colorable" d="M100 200 A150 150 0 0 1 300 300 A130 130 0 0 0 120 220 Z" fill="none" stroke="#333" stroke-width="4"/>
+                <path id="rainbow-band-orange" class="colorable" d="M120 220 A130 130 0 0 1 300 300 A110 110 0 0 0 140 240 Z" fill="none" stroke="#333" stroke-width="4"/>
+                <path id="rainbow-band-yellow" class="colorable" d="M140 240 A110 110 0 0 1 300 300 A90 90 0 0 0 160 260 Z" fill="none" stroke="#333" stroke-width="4"/>
+                <path id="rainbow-band-green" class="colorable" d="M160 260 A90 90 0 0 1 300 300 A70 70 0 0 0 180 280 Z" fill="none" stroke="#333" stroke-width="4"/>
+                <path id="rainbow-band-blue" class="colorable" d="M180 280 A70 70 0 0 1 300 300 A50 50 0 0 0 200 300 Z" fill="none" stroke="#333" stroke-width="4"/>
+                
+                <!-- Rainbow clouds -->
+                <ellipse id="cloud-left" class="colorable" cx="150" cy="350" rx="25" ry="15" fill="none" stroke="#333" stroke-width="3"/>
+                <ellipse id="cloud-center" class="colorable" cx="180" cy="345" rx="30" ry="18" fill="none" stroke="#333" stroke-width="3"/>
+                <ellipse id="cloud-right" class="colorable" cx="210" cy="350" rx="25" ry="15" fill="none" stroke="#333" stroke-width="3"/>
             </g>
 
-            <!-- Franklin Falcon -->
+            <!-- Franklin Falcon (profile facing right, based on Color Walk logo) -->
             <g id="falcon" class="colorable-group">
-                <!-- Falcon Body -->
-                <ellipse id="falcon-body" class="colorable" cx="400" cy="300" rx="80" ry="120" fill="none" stroke="#333" stroke-width="3"/>
+                <!-- Falcon Head (round) -->
+                <circle id="falcon-head" class="colorable" cx="450" cy="200" r="45" fill="none" stroke="#333" stroke-width="4"/>
                 
-                <!-- Falcon Head -->
-                <circle id="falcon-head" class="colorable" cx="400" cy="200" r="50" fill="none" stroke="#333" stroke-width="3"/>
+                <!-- Falcon Beak (curved, pointing right) -->
+                <path id="falcon-beak" class="colorable" d="M495 200 Q520 195 525 200 Q520 205 495 200 Z" fill="none" stroke="#333" stroke-width="3"/>
                 
-                <!-- Falcon Beak -->
-                <polygon id="falcon-beak" class="colorable" points="350,200 320,210 350,220" fill="none" stroke="#333" stroke-width="3"/>
+                <!-- Falcon Eye (round with highlight) -->
+                <circle id="falcon-eye" class="colorable" cx="470" cy="190" r="8" fill="none" stroke="#333" stroke-width="2"/>
+                <circle id="falcon-eye-highlight" class="colorable" cx="472" cy="187" r="3" fill="none" stroke="#333" stroke-width="1"/>
                 
-                <!-- Falcon Eye -->
-                <circle id="falcon-eye" class="colorable" cx="380" cy="190" r="8" fill="none" stroke="#333" stroke-width="2"/>
+                <!-- Falcon Body/Chest (yellow area in logo) -->
+                <ellipse id="falcon-chest" class="colorable" cx="450" cy="280" rx="50" ry="80" fill="none" stroke="#333" stroke-width="4"/>
                 
-                <!-- Left Wing -->
-                <ellipse id="falcon-left-wing" class="colorable" cx="340" cy="280" rx="40" ry="80" fill="none" stroke="#333" stroke-width="3"/>
+                <!-- Falcon Wing (green area, large curved shape) -->
+                <path id="falcon-wing" class="colorable" d="M420 240 Q380 220 350 260 Q340 300 360 340 Q380 370 420 360 Q450 350 460 320 Q465 280 450 250 Q440 240 420 240 Z" fill="none" stroke="#333" stroke-width="4"/>
                 
-                <!-- Right Wing -->
-                <ellipse id="falcon-right-wing" class="colorable" cx="460" cy="280" rx="40" ry="80" fill="none" stroke="#333" stroke-width="3"/>
+                <!-- Wing feather details -->
+                <path id="wing-feathers-1" class="colorable" d="M380 240 Q360 250 370 270 Q385 265 380 240" fill="none" stroke="#333" stroke-width="2"/>
+                <path id="wing-feathers-2" class="colorable" d="M390 260 Q370 270 380 290 Q395 285 390 260" fill="none" stroke="#333" stroke-width="2"/>
+                <path id="wing-feathers-3" class="colorable" d="M400 280 Q380 290 390 310 Q405 305 400 280" fill="none" stroke="#333" stroke-width="2"/>
                 
-                <!-- Wing Details Left -->
-                <path id="falcon-wing-detail-left" class="colorable" d="M340 240 Q320 260 340 280 Q360 260 340 240" fill="none" stroke="#333" stroke-width="2"/>
+                <!-- Falcon Tail (green, long curved feathers) -->
+                <path id="falcon-tail-1" class="colorable" d="M400 350 Q320 340 280 380 Q290 390 330 385 Q380 375 400 350 Z" fill="none" stroke="#333" stroke-width="3"/>
+                <path id="falcon-tail-2" class="colorable" d="M410 360 Q340 350 300 390 Q310 400 350 395 Q390 385 410 360 Z" fill="none" stroke="#333" stroke-width="3"/>
                 
-                <!-- Wing Details Right -->
-                <path id="falcon-wing-detail-right" class="colorable" d="M460 240 Q440 260 460 280 Q480 260 460 240" fill="none" stroke="#333" stroke-width="2"/>
+                <!-- Falcon Legs (yellow) -->
+                <line id="falcon-leg-left" class="colorable" x1="430" y1="350" x2="420" y2="390" stroke="#333" stroke-width="4"/>
+                <line id="falcon-leg-right" class="colorable" x1="470" y1="350" x2="480" y2="390" stroke="#333" stroke-width="4"/>
                 
-                <!-- Tail Feathers -->
-                <ellipse id="falcon-tail" class="colorable" cx="400" cy="450" rx="30" ry="60" fill="none" stroke="#333" stroke-width="3"/>
+                <!-- Falcon Feet with sneakers (green shoes like in logo) -->
+                <ellipse id="falcon-shoe-left" class="colorable" cx="415" cy="395" rx="15" ry="8" fill="none" stroke="#333" stroke-width="3"/>
+                <ellipse id="falcon-shoe-right" class="colorable" cx="485" cy="395" rx="15" ry="8" fill="none" stroke="#333" stroke-width="3"/>
                 
-                <!-- Falcon Legs -->
-                <line id="falcon-leg-left" class="colorable" x1="380" y1="400" x2="375" y2="450" stroke="#333" stroke-width="3"/>
-                <line id="falcon-leg-right" class="colorable" x1="420" y1="400" x2="425" y2="450" stroke="#333" stroke-width="3"/>
-                
-                <!-- Falcon Feet -->
-                <circle id="falcon-foot-left" class="colorable" cx="375" cy="455" r="8" fill="none" stroke="#333" stroke-width="2"/>
-                <circle id="falcon-foot-right" class="colorable" cx="425" cy="455" r="8" fill="none" stroke="#333" stroke-width="2"/>
-                
-                <!-- Chest Pattern -->
-                <ellipse id="falcon-chest" class="colorable" cx="400" cy="270" rx="25" ry="40" fill="none" stroke="#333" stroke-width="2"/>
+                <!-- Shoe details (laces/stripes) -->
+                <line id="shoe-stripe-left-1" class="colorable" x1="405" y1="392" x2="425" y2="392" stroke="#333" stroke-width="1"/>
+                <line id="shoe-stripe-left-2" class="colorable" x1="407" y1="398" x2="423" y2="398" stroke="#333" stroke-width="1"/>
+                <line id="shoe-stripe-right-1" class="colorable" x1="475" y1="392" x2="495" y2="392" stroke="#333" stroke-width="1"/>
+                <line id="shoe-stripe-right-2" class="colorable" x1="477" y1="398" x2="493" y2="398" stroke="#333" stroke-width="1"/>
             </g>
 
             <!-- Fun Decorative Elements -->
