@@ -13,8 +13,23 @@ title: "Color Walk 2025 Bingo"
         <div class="bingo-info">
             <div class="bingo-form">
                 <label>Name: <input type="text" id="student-name" placeholder="Your Name"></label>
-                <label>Grade: <input type="text" id="student-grade" placeholder="Grade"></label>
-                <label>Teacher: <input type="text" id="student-teacher" placeholder="Teacher Name"></label>
+                <label>Grade: <input type="text" id="student-grade" placeholder="Grade" readonly></label>
+                <label>Teacher: 
+                    <select id="student-teacher">
+                        <option value="">Choose your teacher...</option>
+                        <option value="Ms. Ingram" data-grade="K">Ms. Ingram</option>
+                        <option value="Ms. Thomas" data-grade="K">Ms. Thomas</option>
+                        <option value="Ms. Shafer" data-grade="1st">Ms. Shafer</option>
+                        <option value="Ms. Rose" data-grade="1st">Ms. Rose</option>
+                        <option value="Ms. LaBarre" data-grade="2nd">Ms. LaBarre</option>
+                        <option value="Ms. Twite" data-grade="2nd">Ms. Twite</option>
+                        <option value="Ms. Barzelatto" data-grade="3rd">Ms. Barzelatto</option>
+                        <option value="Mr. Kontzer" data-grade="3rd">Mr. Kontzer</option>
+                        <option value="Ms. Guha" data-grade="4th">Ms. Guha</option>
+                        <option value="Mr. Brantley" data-grade="4th/5th">Mr. Brantley</option>
+                        <option value="Ms. Norman" data-grade="5th">Ms. Norman</option>
+                    </select>
+                </label>
             </div>
             
             <div class="bingo-rules">
@@ -102,6 +117,16 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('shuffle-bingo').addEventListener('click', shuffleBoard);
     document.getElementById('reset-bingo').addEventListener('click', resetCard);
     document.getElementById('print-card').addEventListener('click', printCard);
+    
+    // Teacher dropdown functionality
+    document.getElementById('student-teacher').addEventListener('change', function() {
+        const selectedOption = this.options[this.selectedIndex];
+        const grade = selectedOption.dataset.grade || '';
+        document.getElementById('student-grade').value = grade;
+        
+        // Save progress when teacher changes
+        saveProgress();
+    });
     
     // Initialize board
     initializeBoard();
@@ -383,8 +408,15 @@ function loadProgress() {
         
         // Restore form data
         if (progress.studentName) document.getElementById('student-name').value = progress.studentName;
-        if (progress.studentGrade) document.getElementById('student-grade').value = progress.studentGrade;
-        if (progress.studentTeacher) document.getElementById('student-teacher').value = progress.studentTeacher;
+        if (progress.studentTeacher) {
+            document.getElementById('student-teacher').value = progress.studentTeacher;
+            // Trigger change event to auto-populate grade
+            const teacherSelect = document.getElementById('student-teacher');
+            const selectedOption = teacherSelect.options[teacherSelect.selectedIndex];
+            if (selectedOption.dataset.grade) {
+                document.getElementById('student-grade').value = selectedOption.dataset.grade;
+            }
+        }
         if (progress.theatrePrize) document.getElementById('theatre-prize').checked = progress.theatrePrize;
         if (progress.experiencePrize) document.getElementById('experience-prize').checked = progress.experiencePrize;
     }

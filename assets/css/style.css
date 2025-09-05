@@ -898,13 +898,23 @@ section {
     color: var(--white);
 }
 
-.bingo-form input {
+.bingo-form input,
+.bingo-form select {
     width: 100%;
     padding: 0.5rem;
     border: none;
     border-radius: 8px;
     margin-top: 0.5rem;
     font-size: 1rem;
+}
+
+.bingo-form select {
+    cursor: pointer;
+}
+
+#student-grade {
+    background-color: #f0f0f0;
+    color: #666;
 }
 
 .bingo-rules h3 {
@@ -1230,14 +1240,22 @@ section {
         margin-bottom: 0.3rem;
     }
     
-    .bingo-form input {
+    .bingo-form input,
+    .bingo-form select {
         border: 1px solid #333;
         padding: 0.1in;
         background: white;
+        font-size: 10pt;
     }
     
     .bingo-form input::placeholder {
         color: transparent !important;
+    }
+    
+    .bingo-form select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
     }
     
     .bingo-rules {
