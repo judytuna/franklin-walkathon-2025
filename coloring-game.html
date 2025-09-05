@@ -1,0 +1,234 @@
+---
+layout: default
+title: "Color the Franklin Falcon"
+---
+
+<section class="coloring-game-hero">
+    <div class="coloring-hero-content">
+        <h1 class="coloring-title">🎨 Color the Franklin Falcon! 🎨</h1>
+        <p class="coloring-subtitle">Click on different parts of the Falcon and rainbow to color them in!</p>
+        <p class="coloring-instructions">Choose your colors and make the most awesome Franklin Falcon ever! 🦅</p>
+    </div>
+</section>
+
+<section class="coloring-game-section">
+    <div class="color-palette">
+        <h3>🌈 Pick Your Colors! 🌈</h3>
+        <div class="color-buttons">
+            <button class="color-btn" data-color="#FF6B35" style="background-color: #FF6B35;" title="Orange"></button>
+            <button class="color-btn" data-color="#FFE13B" style="background-color: #FFE13B;" title="Yellow"></button>
+            <button class="color-btn" data-color="#066C2D" style="background-color: #066C2D;" title="Green"></button>
+            <button class="color-btn" data-color="#4CAF50" style="background-color: #4CAF50;" title="Light Green"></button>
+            <button class="color-btn" data-color="#2196F3" style="background-color: #2196F3;" title="Blue"></button>
+            <button class="color-btn" data-color="#9C27B0" style="background-color: #9C27B0;" title="Purple"></button>
+            <button class="color-btn" data-color="#E91E63" style="background-color: #E91E63;" title="Pink"></button>
+            <button class="color-btn" data-color="#F44336" style="background-color: #F44336;" title="Red"></button>
+            <button class="color-btn" data-color="#795548" style="background-color: #795548;" title="Brown"></button>
+            <button class="color-btn" data-color="#607D8B" style="background-color: #607D8B;" title="Gray"></button>
+            <button class="color-btn" data-color="#000000" style="background-color: #000000;" title="Black"></button>
+            <button class="color-btn" data-color="#FFFFFF" style="background-color: #FFFFFF; border: 2px solid #ccc;" title="White"></button>
+        </div>
+        <div class="game-controls">
+            <button id="reset-btn" class="control-btn">🔄 Start Over</button>
+            <div class="current-color">
+                <span>Current Color:</span>
+                <div id="current-color-display" style="background-color: #FF6B35;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="coloring-canvas">
+        <svg id="falcon-coloring" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+            <!-- Rainbow Background -->
+            <g id="rainbow" class="colorable-group">
+                <path id="rainbow-band-1" class="colorable" d="M50 400 Q400 200 750 400 Q400 220 50 400 Z" fill="none" stroke="#333" stroke-width="3"/>
+                <path id="rainbow-band-2" class="colorable" d="M70 410 Q400 230 730 410 Q400 250 70 410 Z" fill="none" stroke="#333" stroke-width="3"/>
+                <path id="rainbow-band-3" class="colorable" d="M90 420 Q400 260 710 420 Q400 280 90 420 Z" fill="none" stroke="#333" stroke-width="3"/>
+                <path id="rainbow-band-4" class="colorable" d="M110 430 Q400 290 690 430 Q400 310 110 430 Z" fill="none" stroke="#333" stroke-width="3"/>
+                <path id="rainbow-band-5" class="colorable" d="M130 440 Q400 320 670 440 Q400 340 130 440 Z" fill="none" stroke="#333" stroke-width="3"/>
+            </g>
+
+            <!-- Franklin Falcon -->
+            <g id="falcon" class="colorable-group">
+                <!-- Falcon Body -->
+                <ellipse id="falcon-body" class="colorable" cx="400" cy="300" rx="80" ry="120" fill="none" stroke="#333" stroke-width="3"/>
+                
+                <!-- Falcon Head -->
+                <circle id="falcon-head" class="colorable" cx="400" cy="200" r="50" fill="none" stroke="#333" stroke-width="3"/>
+                
+                <!-- Falcon Beak -->
+                <polygon id="falcon-beak" class="colorable" points="350,200 320,210 350,220" fill="none" stroke="#333" stroke-width="3"/>
+                
+                <!-- Falcon Eye -->
+                <circle id="falcon-eye" class="colorable" cx="380" cy="190" r="8" fill="none" stroke="#333" stroke-width="2"/>
+                
+                <!-- Left Wing -->
+                <ellipse id="falcon-left-wing" class="colorable" cx="340" cy="280" rx="40" ry="80" fill="none" stroke="#333" stroke-width="3"/>
+                
+                <!-- Right Wing -->
+                <ellipse id="falcon-right-wing" class="colorable" cx="460" cy="280" rx="40" ry="80" fill="none" stroke="#333" stroke-width="3"/>
+                
+                <!-- Wing Details Left -->
+                <path id="falcon-wing-detail-left" class="colorable" d="M340 240 Q320 260 340 280 Q360 260 340 240" fill="none" stroke="#333" stroke-width="2"/>
+                
+                <!-- Wing Details Right -->
+                <path id="falcon-wing-detail-right" class="colorable" d="M460 240 Q440 260 460 280 Q480 260 460 240" fill="none" stroke="#333" stroke-width="2"/>
+                
+                <!-- Tail Feathers -->
+                <ellipse id="falcon-tail" class="colorable" cx="400" cy="450" rx="30" ry="60" fill="none" stroke="#333" stroke-width="3"/>
+                
+                <!-- Falcon Legs -->
+                <line id="falcon-leg-left" class="colorable" x1="380" y1="400" x2="375" y2="450" stroke="#333" stroke-width="3"/>
+                <line id="falcon-leg-right" class="colorable" x1="420" y1="400" x2="425" y2="450" stroke="#333" stroke-width="3"/>
+                
+                <!-- Falcon Feet -->
+                <circle id="falcon-foot-left" class="colorable" cx="375" cy="455" r="8" fill="none" stroke="#333" stroke-width="2"/>
+                <circle id="falcon-foot-right" class="colorable" cx="425" cy="455" r="8" fill="none" stroke="#333" stroke-width="2"/>
+                
+                <!-- Chest Pattern -->
+                <ellipse id="falcon-chest" class="colorable" cx="400" cy="270" rx="25" ry="40" fill="none" stroke="#333" stroke-width="2"/>
+            </g>
+
+            <!-- Fun Decorative Elements -->
+            <g id="decorations" class="colorable-group">
+                <!-- Stars -->
+                <polygon id="star-1" class="colorable" points="150,150 155,165 170,165 158,175 163,190 150,180 137,190 142,175 130,165 145,165" fill="none" stroke="#333" stroke-width="2"/>
+                <polygon id="star-2" class="colorable" points="650,150 655,165 670,165 658,175 663,190 650,180 637,190 642,175 630,165 645,165" fill="none" stroke="#333" stroke-width="2"/>
+                <polygon id="star-3" class="colorable" points="100,350 105,365 120,365 108,375 113,390 100,380 87,390 92,375 80,365 95,365" fill="none" stroke="#333" stroke-width="2"/>
+                <polygon id="star-4" class="colorable" points="700,350 705,365 720,365 708,375 713,390 700,380 687,390 692,375 680,365 695,365" fill="none" stroke="#333" stroke-width="2"/>
+                
+                <!-- Clouds -->
+                <ellipse id="cloud-1a" class="colorable" cx="200" cy="100" rx="20" ry="15" fill="none" stroke="#333" stroke-width="2"/>
+                <ellipse id="cloud-1b" class="colorable" cx="220" cy="95" rx="25" ry="18" fill="none" stroke="#333" stroke-width="2"/>
+                <ellipse id="cloud-1c" class="colorable" cx="240" cy="100" rx="20" ry="15" fill="none" stroke="#333" stroke-width="2"/>
+                
+                <ellipse id="cloud-2a" class="colorable" cx="600" cy="80" rx="20" ry="15" fill="none" stroke="#333" stroke-width="2"/>
+                <ellipse id="cloud-2b" class="colorable" cx="620" cy="75" rx="25" ry="18" fill="none" stroke="#333" stroke-width="2"/>
+                <ellipse id="cloud-2c" class="colorable" cx="640" cy="80" rx="20" ry="15" fill="none" stroke="#333" stroke-width="2"/>
+            </g>
+        </svg>
+    </div>
+</section>
+
+<section class="coloring-game-info">
+    <div class="game-info-content">
+        <h2>🦅 About Our Franklin Falcon! 🦅</h2>
+        <p>The Franklin Falcon represents our school spirit and pride! Just like our students, falcons are:</p>
+        <div class="falcon-traits">
+            <div class="trait">
+                <span class="trait-icon">💪</span>
+                <span class="trait-text">Strong and Determined</span>
+            </div>
+            <div class="trait">
+                <span class="trait-icon">🎯</span>
+                <span class="trait-text">Focused on Goals</span>
+            </div>
+            <div class="trait">
+                <span class="trait-icon">🤝</span>
+                <span class="trait-text">Work Great in Teams</span>
+            </div>
+            <div class="trait">
+                <span class="trait-icon">🌟</span>
+                <span class="trait-text">Soar to New Heights</span>
+            </div>
+        </div>
+        <p class="game-share-text">Color your falcon and get ready for our amazing Color Walk! 🌈</p>
+    </div>
+</section>
+
+<script>
+let currentColor = '#FF6B35'; // Default orange color
+
+// Color palette functionality
+document.querySelectorAll('.color-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        // Remove active class from all buttons
+        document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
+        
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        // Set current color
+        currentColor = this.dataset.color;
+        
+        // Update current color display
+        document.getElementById('current-color-display').style.backgroundColor = currentColor;
+    });
+});
+
+// Set initial active color
+document.querySelector('.color-btn').classList.add('active');
+
+// Coloring functionality
+document.querySelectorAll('.colorable').forEach(element => {
+    element.addEventListener('click', function() {
+        this.style.fill = currentColor;
+        
+        // Add a fun animation
+        this.style.transform = 'scale(1.05)';
+        setTimeout(() => {
+            this.style.transform = 'scale(1)';
+        }, 150);
+    });
+    
+    // Add hover effect
+    element.addEventListener('mouseenter', function() {
+        this.style.cursor = 'pointer';
+        this.style.opacity = '0.8';
+    });
+    
+    element.addEventListener('mouseleave', function() {
+        this.style.opacity = '1';
+    });
+});
+
+// Reset functionality
+document.getElementById('reset-btn').addEventListener('click', function() {
+    document.querySelectorAll('.colorable').forEach(element => {
+        element.style.fill = 'none';
+        element.style.transform = 'scale(1)';
+    });
+    
+    // Fun reset animation
+    document.getElementById('falcon-coloring').style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        document.getElementById('falcon-coloring').style.transform = 'scale(1)';
+    }, 200);
+});
+
+// Add some fun sound effects (visual feedback)
+document.querySelectorAll('.colorable').forEach(element => {
+    element.addEventListener('click', function() {
+        // Create a temporary sparkle effect
+        const rect = this.getBoundingClientRect();
+        const sparkle = document.createElement('div');
+        sparkle.style.position = 'fixed';
+        sparkle.style.left = (rect.left + rect.width/2) + 'px';
+        sparkle.style.top = (rect.top + rect.height/2) + 'px';
+        sparkle.style.width = '10px';
+        sparkle.style.height = '10px';
+        sparkle.style.background = currentColor;
+        sparkle.style.borderRadius = '50%';
+        sparkle.style.pointerEvents = 'none';
+        sparkle.style.zIndex = '1000';
+        sparkle.style.animation = 'sparkle 0.6s ease-out forwards';
+        
+        document.body.appendChild(sparkle);
+        
+        setTimeout(() => {
+            sparkle.remove();
+        }, 600);
+    });
+});
+
+// Add sparkle animation CSS
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes sparkle {
+        0% { transform: scale(1) rotate(0deg); opacity: 1; }
+        50% { transform: scale(2) rotate(180deg); opacity: 0.8; }
+        100% { transform: scale(0) rotate(360deg); opacity: 0; }
+    }
+`;
+document.head.appendChild(style);
+</script>
