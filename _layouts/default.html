@@ -14,10 +14,12 @@
     <header class="site-header">
         <div class="wrapper">
             <nav class="site-nav">
-                <div class="site-title">
-                    <h1>{{ site.school_name }}</h1>
-                    <span class="mascot">{{ site.mascot }}</span>
-                </div>
+                <a href="{{ '/' | relative_url }}" class="site-title-link">
+                    <div class="site-title">
+                        <h1>{{ site.school_name }}</h1>
+                        <span class="mascot">{{ site.mascot }}</span>
+                    </div>
+                </a>
             </nav>
         </div>
     </header>
